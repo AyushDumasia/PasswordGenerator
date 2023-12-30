@@ -1,0 +1,191 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+input:focus-visible {
+    outline: 0;
+}
+
+.main {
+    background: linear-gradient(to right, #2d1c65, #9f2e90);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 47%;
+    padding: 0.5%;
+    box-shadow: 70px 70px 50px rgb(0 0 0 / 50%);
+    background: #7f807f68;
+    border-radius: 15px;
+}
+
+#pass-box {
+    width: 100%;
+    display: block;
+    background-color: rgba(108, 123, 132, 0);
+    font-size: 30px;
+    padding: 10px;
+    border : none;
+    border-radius: 15px;
+}
+
+#pass-box::placeholder{
+    color: rgb(38, 37, 37);
+}
+
+
+#pass-box::selection{
+    background-color: #1b1818;
+    color: white;
+}
+
+
+
+
+.row {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+
+.btns{
+    display: flex;
+    flex-direction: column;
+}
+
+#btn {
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+    outline: 0;
+    border: 0;
+    padding: 10px;
+    background-color: #ffffff;
+    margin-top: 10px;
+}
+
+#btn:active{
+    background-color: #3d3a3a;
+    color:white;
+}
+#copy:active{
+    background-color: #3d3a3a;
+    color:white;
+}
+#reset:active{
+    background-color: #3d3a3a;
+    color:white;
+}
+
+#copy {
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+    outline: 0;
+    border: 0;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #ffffff;
+    margin-top: 10px;
+}
+
+#reset {
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+    outline: 0;
+    border: 0;
+    padding: 10px;
+    background-color: #ffffff;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+#total-char{
+    -webkit-appearance:none;
+    display: flex;
+    text-align: center;
+    width: 490%;
+    height: 5px;
+}
+
+
+#total-char::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    align-self: center;
+    justify-content: center;
+    border-radius:none;
+    height: 5px;
+    width: 10px;
+    background:#ffffff;
+}
+
+#total-char::-webkit-slider-runnable-track{
+    -webkit-appearance:none;
+    background-color: #2f2727;
+    cursor: pointer;
+}
+
+@media screen and  (min-width:300px) and  (max-width :576px) {
+    body {
+        overflow: hidden;
+    }
+    .box {
+        width: 70%;
+        padding: 2%;
+        box-shadow: inset -20px -17px 66px 0px rgb(0 0 0 / 50%);
+        background: #7f807f68;
+        border-radius: 15px;
+    }
+    #total-char{
+        display: flex;
+        justify-content: center;
+        margin-left: 10%;
+        -webkit-appearance:none;
+        width: 100%;
+        text-align: center;
+        align-content: center;
+    }
+    .row{
+        font-size: 15px;
+    }
+
+    #pass-box{
+        width: 200%;
+        font-size: 20px;
+    }
+    #copy {
+        width: 30%;
+        font-size: 12px;
+        border-radius : 5px;
+    }
+    
+    #reset {
+        width: 30%;
+        font-size: 12px;
+        border-radius : 5px;
+
+    }
+    #btn{
+        width: 30%;
+        font-size: 12px;
+        border-radius : 5px;
+
+    }
+    .btns{
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+}
