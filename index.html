@@ -14,7 +14,8 @@
 </head>
 
 <body>
-    <div class="main">
+    
+    <div class="main">      
         <div class="box">
             <input type="text" id="pass-box" placeholder="Generate a Password"></input>
             <div class="row">
@@ -46,7 +47,7 @@
                     </div>
                 </label>
                 <div class="right">
-                    <input type="checkbox" name="" id="lower-case" />
+                    <input type="checkbox" name="" id="lower-case" checked />
                 </div>
             </div>
             <div class="row">
@@ -73,13 +74,24 @@
                 <button id="btn" class="allBtns">
                     Generate
                 </button>
+                <button id = "copy" class="allBtns">
+                    Copy To Clipboard
+                </button>
                 <button id = "reset" class="allBtns">
                     Reset Password
                 </button>
-                <button id = "copy" class="allBtns">
-                    Copy Password
+                <button id = "deleteBtn" class="allBtns">
+                    Delete History
                 </button>
             </div>
+            <a href="#page-2" id ="history">Show History</a>
+        </div>
+    </div>
+
+    <div id="page-2">
+        <h1>History</h2>
+        <div class="history-box">
+            <p class="afterdelete">Nothing in History</p>
         </div>
     </div>
     <script src="index.js"></script>

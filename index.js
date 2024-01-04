@@ -44,11 +44,12 @@ let passBox = document.querySelector("#pass-box");
 btn.addEventListener("click", function() {
     passWord = "";
     passwordGenerate();
-    console.log(passWord);
     passBox.value = intialInput.value + passWord;
+    console.log(passBox.value);
     showLength();
     let numberOfCheckedCheckboxes = checkCheckBox();
     checkStrength(numberOfCheckedCheckboxes);
+    showHistory();
 });
 
 
@@ -120,3 +121,24 @@ function checkCheckBox(){
     return countCheck;
 }
 
+
+//history
+let isHis = true;
+let hisBox = document.querySelector(".history-box");
+function showHistory(){
+    if(isHis == true){
+        hisBox.innerHTML = ``;
+        isHis = false;
+    }
+    let addHisBox = document.createElement("div");
+    addHisBox.classList.add("boxes");
+    addHisBox.innerHTML = 
+        `<p class="history-para">${passBox.value}</p>`;
+    hisBox.prepend(addHisBox);
+}
+
+let deleteBtn = document.querySelector("#deleteBtn");
+deleteBtn.addEventListener("click",function(){
+    hisBox.innerHTML = 
+    `<p class = "afterdelete">History has been Deleted</p>`;
+})
