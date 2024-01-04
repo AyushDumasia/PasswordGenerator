@@ -10,7 +10,10 @@ input:focus-visible {
 }
 
 .main {
-    background: linear-gradient(to right, #2d1c65, #9f2e90);
+    background: linear-gradient(to bottom, #3714a4, #000000);    
+    background-size: cover;
+    background-clip: border-box;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -19,9 +22,9 @@ input:focus-visible {
 
 .box {
     width: 47%;
-    padding: 0.5%;
-    box-shadow: 70px 70px 50px rgb(0 0 0 / 50%);
-    background: #7f807f68;
+    padding: 1.5%;
+    box-shadow: 13px 20px 13px rgb(0 0 0 / 50%);
+    background: #7f807f84;
     border-radius: 15px;
 }
 
@@ -45,9 +48,6 @@ input:focus-visible {
     color: white;
 }
 
-
-
-
 .row {
     width: 100%;
     display: flex;
@@ -57,66 +57,30 @@ input:focus-visible {
     font-size: 20px;
 }
 
-
 .btns{
     display: flex;
     flex-direction: column;
 }
-
-#btn {
-    border-radius: 15px;
+.allBtns{
     cursor: pointer;
     width: 100%;
     font-size: 20px;
     outline: 0;
     border: 0;
+    border-radius: 5px;
     padding: 10px;
     background-color: #ffffff;
     margin-top: 10px;
 }
-
-#btn:active{
+.allBtns:active{
     background-color: #3d3a3a;
     color:white;
 }
-#copy:active{
-    background-color: #3d3a3a;
-    color:white;
-}
-#reset:active{
-    background-color: #3d3a3a;
-    color:white;
-}
-
-#copy {
-    cursor: pointer;
-    width: 100%;
-    font-size: 20px;
-    outline: 0;
-    border: 0;
-    border-radius: 15px;
-    padding: 10px;
-    background-color: #ffffff;
-    margin-top: 10px;
-}
-
-#reset {
-    cursor: pointer;
-    width: 100%;
-    font-size: 20px;
-    outline: 0;
-    border: 0;
-    padding: 10px;
-    background-color: #ffffff;
-    margin-top: 10px;
-    border-radius: 15px;
-}
-
 #total-char{
     -webkit-appearance:none;
     display: flex;
     text-align: center;
-    width: 490%;
+    width: 470%;
     height: 5px;
 }
 
@@ -136,6 +100,26 @@ input:focus-visible {
     background-color: #2f2727;
     cursor: pointer;
 }
+
+.add-box{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-box p{
+    color: rgb(255, 255, 255);
+}
+
+#intial-input{
+    height: 2.5rem;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+    width: 300px;
+}
+
 
 @media screen and  (min-width:300px) and  (max-width :576px) {
     body {

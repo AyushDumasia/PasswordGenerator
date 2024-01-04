@@ -10,6 +10,7 @@ let upperInput = document.querySelector("#upper-case");
 let lowerInput = document.querySelector("#lower-case");
 let numberInput = document.querySelector("#numbers");
 let symbolInput = document.querySelector("#symbols");
+let intialInput = document.querySelector("#intial-input");
 
 //For Generating Random Numbers
 function getRandomNum(dataset){
@@ -44,7 +45,10 @@ btn.addEventListener("click", function() {
     passWord = "";
     passwordGenerate();
     console.log(passWord);
-    passBox.value = passWord;
+    passBox.value = intialInput.value + passWord;
+    showLength();
+    let numberOfCheckedCheckboxes = checkCheckBox();
+    checkStrength(numberOfCheckedCheckboxes);
 });
 
 
@@ -66,5 +70,53 @@ let resetBtn = document.querySelector("#reset");
 resetBtn.addEventListener("click",function(){
     passWord = "";
     passBox.value = `Generate a Password` ;
+    range2.innerText= "0";
+    passStrength.innerText = "";
+    intialInput.value = "";
+});
 
-})
+//showing length
+let range2 = document.querySelector("#range2");
+function showLength(){
+    let sum = intialInput.value.length+ +range.value;
+    range2.innerText= sum;
+}
+
+//showing strength of password
+let passStrength = document.querySelector("#pass-strength");
+function checkStrength(checkCheckBox){
+    if(checkCheckBox === 1){
+        passStrength.innerText = "Very Weak";
+        passStrength.style.color = "red";
+    }
+    else if(checkCheckBox === 2){
+        passStrength.innerText = "Weak";
+        passStrength.style.color = "yellow";
+    }
+    else if(checkCheckBox === 3){
+        passStrength.innerText = "Medium";
+        passStrength.style.color = "blue";
+    }
+    else if(checkCheckBox === 4){
+        passStrength.innerText = "Strong";
+        passStrength.style.color = "green";
+    }
+    else if(checkCheckBox === undefined || checkCheckBox === null){
+        passStrength.innerText = "Enter a Generate Button";
+    }
+}
+
+//for checkbox
+function checkCheckBox(){
+    let checkBoxes = document.querySelectorAll('input[type="checkbox"]');
+    let countCheck = 0;
+
+    checkBoxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            countCheck++;
+        }
+    });
+
+    return countCheck;
+}
+
