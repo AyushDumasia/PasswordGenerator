@@ -8,4 +8,4 @@
   <li>Show previous history</li>
   <li>Modifiedable</li>
 </ul>
-<p>Checkout website <a href = "https://ayushdumasia.github.io/randomPasswordGenerator/">Here</a></p>
+<p>Checkout website <a href = "https://ayushdumasia.github.io/PasswordGenerator/">Here</a></p>
