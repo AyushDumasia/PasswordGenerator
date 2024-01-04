@@ -121,8 +121,8 @@ function checkCheckBox(){
     return countCheck;
 }
 
-
 //history
+let historyValue = [];
 let isHis = true;
 let hisBox = document.querySelector(".history-box");
 function showHistory(){
@@ -132,6 +132,7 @@ function showHistory(){
     }
     let addHisBox = document.createElement("div");
     addHisBox.classList.add("boxes");
+    historyValue.push(passBox.value);
     addHisBox.innerHTML = 
         `<p class="history-para">${passBox.value}</p>`;
     hisBox.prepend(addHisBox);
@@ -139,6 +140,7 @@ function showHistory(){
 
 let deleteBtn = document.querySelector("#deleteBtn");
 deleteBtn.addEventListener("click",function(){
-    hisBox.innerHTML = 
-    `<p class = "afterdelete">History has been Deleted</p>`;
+    hisBox.innerHTML = ``;
+    alert("History has been Deleted");
+    historyValue = [];
 })
