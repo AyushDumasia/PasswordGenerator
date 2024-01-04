@@ -1,7 +1,9 @@
 <h1>Random Password Generator</h1>
 <p>Features : </p>
 <ul>
-  <li>Showing Strength</li>
+  <li>Character Set Customization</li>
+  <li>Password Length Selection</li>
+  <li>Strength Indicator</li>
   <li>Copy To Clipboard</li>
   <li>Modifiedable</li>
 </ul>
