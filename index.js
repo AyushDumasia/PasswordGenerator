@@ -140,7 +140,15 @@ function showHistory(){
 
 let deleteBtn = document.querySelector("#deleteBtn");
 deleteBtn.addEventListener("click",function(){
-    hisBox.innerHTML = ``;
-    alert("History has been Deleted");
+    if(historyValue == ""){
+        alert("Press a Generate Button");
+    }
+    else{
+        alert("History has been deleted");
+    }
+    hisBox.innerHTML = `
+    <p class="afterdelete">History has been deleted</p>
+    `;
     historyValue = [];
+    isHis = true;
 })
