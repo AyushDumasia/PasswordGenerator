@@ -107,7 +107,7 @@ function checkStrength(checkCheckBox){
     }
 }
 
-//for checkbox
+//for counting checkbox
 function checkCheckBox(){
     let checkBoxes = document.querySelectorAll('input[type="checkbox"]');
     let countCheck = 0;
@@ -121,7 +121,7 @@ function checkCheckBox(){
     return countCheck;
 }
 
-//history
+//Showing history
 let historyValue = [];
 let isHis = true;
 let hisBox = document.querySelector(".history-box");
@@ -138,6 +138,8 @@ function showHistory(){
     hisBox.prepend(addHisBox);
 }
 
+
+//Delete Button 
 let deleteBtn = document.querySelector("#deleteBtn");
 deleteBtn.addEventListener("click",function(){
     if(historyValue == ""){
