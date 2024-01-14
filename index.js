@@ -154,3 +154,20 @@ deleteBtn.addEventListener("click",function(){
     historyValue = [];
     isHis = true;
 })
+
+
+let hideBtn = document.querySelector(".fa-eye");
+let showBtn = document.querySelector(".fa-eye-slash");
+
+hideBtn.addEventListener("click",function(){
+    if(passBox.type == "text"){
+        passBox.type = "password";
+        hideBtn.classList.remove("fa-eye");
+        hideBtn.classList.add("fa-eye-slash");
+    }
+    else{
+        passBox.type = "text";
+        hideBtn.classList.add("fa-eye");
+        hideBtn.classList.remove("fa-eye-slash");
+    }
+})
