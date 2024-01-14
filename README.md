@@ -6,6 +6,6 @@
   <li>Strength Indicator</li>
   <li>Copy To Clipboard</li>
   <li>Show previous history</li>
-  <li>Modifiedable</li>
+  <li>Customizable</li>
 </ul>
 <p>Checkout website <a href = "https://ayushdumasia.github.io/PasswordGenerator/">Here</a></p>
