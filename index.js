@@ -206,3 +206,16 @@ function copyToClipboard(text) {
     document.execCommand('copy');
     document.body.removeChild(textarea);
 }
+
+
+function updateInputType() {
+    if (window.innerWidth <= 600) {
+        range.type = 'number';
+    } else {
+        range.type = 'range';
+    }
+}
+
+updateInputType();
+
+window.addEventListener('resize', updateInputType);
