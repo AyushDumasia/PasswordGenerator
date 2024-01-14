@@ -32,6 +32,9 @@ function passwordGenerate() {
     if (symbolInput.checked) {
         passWord += getRandomNum(symbolSet);
     }
+    if(!upperInput.checked && !lowerInput.checked && !numberInput.checked && !symbolInput.checked){
+        return 0;
+    }
     if(passWord.length < range.value){
         return passwordGenerate();
     }
@@ -50,6 +53,11 @@ btn.addEventListener("click", function() {
     let numberOfCheckedCheckboxes = checkCheckBox();
     checkStrength(numberOfCheckedCheckboxes);
     showHistory();
+    if(passBox.type == "password"){
+        passBox.type = "text";
+        hideBtn.classList.add("fa-eye");
+        hideBtn.classList.remove("fa-eye-slash");
+    }
 });
 
 
@@ -70,10 +78,12 @@ copyBtn.addEventListener("click",function(){
 let resetBtn = document.querySelector("#reset");
 resetBtn.addEventListener("click",function(){
     passWord = "";
-    passBox.value = `Generate a Password` ;
+    passBox.value = `` ;
     range2.innerText= "0";
     passStrength.innerText = "";
     intialInput.value = "";
+    hideBtn.classList.add("fa-eye");
+    hideBtn.classList.remove("fa-eye-slash");
 });
 
 //showing length
@@ -86,7 +96,11 @@ function showLength(){
 //showing strength of password
 let passStrength = document.querySelector("#pass-strength");
 function checkStrength(checkCheckBox){
-    if(checkCheckBox === 1){
+    if(checkCheckBox === 0 ){
+        passStrength.innerText = "Enter a Generate Button";
+        passStrength.style.color = "red";
+    }
+    else if(checkCheckBox === 1){
         passStrength.innerText = "Very Weak";
         passStrength.style.color = "red";
     }
@@ -101,9 +115,6 @@ function checkStrength(checkCheckBox){
     else if(checkCheckBox === 4){
         passStrength.innerText = "Strong";
         passStrength.style.color = "green";
-    }
-    else if(checkCheckBox === undefined || checkCheckBox === null){
-        passStrength.innerText = "Enter a Generate Button";
     }
 }
 
@@ -134,7 +145,11 @@ function showHistory(){
     addHisBox.classList.add("boxes");
     historyValue.push(passBox.value);
     addHisBox.innerHTML = 
-        `<p class="history-para">${passBox.value}</p>`;
+        `<div class = "add-history-box">
+            <p class="history-para">${passBox.value}</p>
+            <i class="fa-regular fa-copy fa-copy-btn"></i>
+        </div>
+        `;
     hisBox.prepend(addHisBox);
 }
 
@@ -146,18 +161,17 @@ deleteBtn.addEventListener("click",function(){
         alert("Press a Generate Button");
     }
     else{
-        alert("History has been deleted");
-    }
-    hisBox.innerHTML = `
-    <p class="afterdelete">History has been deleted</p>
+        hisBox.innerHTML = `
+        <p class="afterdelete">History has been deleted</p>
     `;
+    }
+    
     historyValue = [];
     isHis = true;
 })
 
 
 let hideBtn = document.querySelector(".fa-eye");
-let showBtn = document.querySelector(".fa-eye-slash");
 
 hideBtn.addEventListener("click",function(){
     if(passBox.type == "text"){
@@ -171,3 +185,24 @@ hideBtn.addEventListener("click",function(){
         hideBtn.classList.remove("fa-eye-slash");
     }
 })
+
+
+hisBox.addEventListener("click", function(e) {
+    if (e.target.classList.contains("fa-copy-btn")) {
+        let preHistory = e.target.previousElementSibling;
+        if (preHistory) {
+            let passwordToCopy = preHistory.textContent;
+            copyToClipboard(passwordToCopy);
+        }
+    }
+});
+
+// Function to copy text to clipboard
+function copyToClipboard(text) {
+    var textarea = document.createElement("textarea");
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+}

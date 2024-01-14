@@ -227,3 +227,20 @@ input:focus-visible {
         flex-direction: row;
     }
 }
+.add-history-box{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.add-history-box i {
+    padding: 2px 0px 0px 4px;
+    height: 23px;
+    width: 20px;
+    background-color : rgba(245, 222, 179, 0.377);
+    border-radius : 50%;
+}
+
+.add-history-box i:active{
+    background-color : rgba(30, 26, 18, 0.377);
+}
