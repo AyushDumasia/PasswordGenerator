@@ -97,7 +97,7 @@ function showLength(){
 let passStrength = document.querySelector("#pass-strength");
 function checkStrength(checkCheckBox){
     if(checkCheckBox === 0 ){
-        passStrength.innerText = "Enter a Generate Button";
+        passStrength.innerText = "Select any type";
         passStrength.style.color = "red";
     }
     else if(checkCheckBox === 1){
